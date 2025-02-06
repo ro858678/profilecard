@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+
+            background-image: url(4k-ultra-hd-wallpapers-for-pc.png);
+        }
+
+        .profile-card {
+            color: #f4f4f4;
+            background-image: url(3D-purple-ball-shape_3840x2160.jpg);
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 430px;
+        }
+
+        .profile-card img {
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-card h2 {
+            margin: 10px 0;
+        }
+
+        .profile-card p {
+            padding: 8px;
+            color: white;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+.social-links{
+    font-weight: bold;
+}
+        .social-links a {
+            margin: 5px;
+            text-decoration: none;
+            color: #0058b1;
+            font-size: 15px;
+        }
+        .profile-card button{
+            width: 200px;
+            border-radius: 50px;
+            background-color: black;
+            padding: 2px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">Richard Ofori</h2>
+        <p data-testid="jobTitle">Frontend Developper</p>
+        <p data-testid="shortBio">Passionate about web development and open-source contributions. Love working with modern technologies to build scalable applications.</p>
+        <p data-testid="currentLocation">kumasi, Ghana</p>
+       <button><p>Email: <a href="mailto:ro858678@gmai.com" data-testid="emailAddress">ro858678@gmail.com</a></p></button> 
+        <div class="social-links" data-testid="socialLinks">
+            <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ro858678" target="_blank">GitHub</a>
+            <a href="https://twitter.com/ro858678" target="_blank">Twitter</a>
+        </div>
+        <p data-testid="currentTimeUTC" id="utc-time"></p>
+    </div>
+
+    <script>
+        function updateUTCTime() {
+            const now = new Date();
+            document.getElementById("utc-time").textContent = "UTC Time: " + now.toUTCString();
+        }
+        updateUTCTime();
+        setInterval(updateUTCTime, 1000);
+    </script>
+</body>
+</html>
